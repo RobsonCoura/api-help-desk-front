@@ -1,0 +1,13 @@
+/* Estilos para a classe .card */
+.card {
+    /* Define a largura como 90% e centraliza horizontalmente */
+    width: 90%;
+    margin: 1rem auto; /* Margem de 1rem em cima e em baixo, auto para centralizar horizontalmente */
+    background-color: rgb(220, 220, 220); /* Cor de fundo cinza claro */
+}
+
+/* Estilos para todas as tags <img> */
+img {
+    /* Define a altura como 12rem (192 pixels aproximadamente) */
+    height: 12rem;
+}

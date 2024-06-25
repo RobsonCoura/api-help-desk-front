@@ -1,0 +1,44 @@
+/* Estilos para a classe .container */
+.container {
+    /* Define a largura como 90% e centraliza horizontalmente */
+    width: 90%;
+    margin: auto; /* Margem automática para centralizar horizontalmente */
+}
+
+/* Estilos para todas as tabelas */
+table {
+    width: 100%;  /* Define a largura como 100% para ocupar todo o espaço disponível */
+}
+
+/* Define a largura dos campos de formulário de material design */
+mat-form-field {
+    width: 100%;  /* Ocupa 100% da largura do contêiner pai */
+}
+ 
+/* Define a largura dos botões */
+button {
+    width: 100%;  /* Ocupa 100% da largura do contêiner pai */
+}
+ 
+/* Estiliza o cabeçalho h1 */
+h1 {
+    width: 100%;  /* Ocupa 100% da largura do contêiner pai */
+    text-align: center;  /* Centraliza o texto */
+    margin-bottom: 2rem;  /* Adiciona uma margem inferior de 2 rem */
+}
+
+/* Estilos para a classe .edit */
+.edit {
+    color: rgba(64,0,255,1); 
+}
+
+/* Estilos para a classe .delete */
+.visibility {
+    color: black;
+}
+
+mat-radio-group {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}

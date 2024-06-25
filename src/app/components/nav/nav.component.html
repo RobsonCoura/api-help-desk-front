@@ -1,0 +1,58 @@
+<!-- Container principal usando o componente mat-drawer-container -->
+<mat-drawer-container class="container" autosize>
+
+    <!-- Drawer lateral (menu lateral) com referência #drawer e modo side -->
+    <mat-drawer #drawer class="sidenav" mode="side">
+        <!-- Imagem de navegação dentro do drawer -->
+        <img src="assets/img/side-image.svg" alt="Imagem de navegação">
+
+        <!-- Lista de navegação dentro do drawer -->
+        <mat-nav-list class="nav-list">
+            <!-- Item de lista de navegação para a rota 'home' -->
+            <a mat-list-item routerLink="home">
+                <i class="material-icons">home</i>
+                Home
+            </a>
+            <!-- Item de lista de navegação para a rota 'tecnicos' -->
+            <a mat-list-item routerLink="tecnicos">
+                <i class="material-icons">account_circle</i>
+                Técnicos
+            </a>
+            <!-- Item de lista de navegação para a rota '/' (Clientes) -->
+            <a mat-list-item routerLink="clientes">
+                <i class="material-icons">person</i>
+                Clientes
+            </a>
+            <!-- Item de lista de navegação para a rota '/' (Clientes) -->
+            <a mat-list-item routerLink="chamados">
+                <i class="material-icons">support</i>
+                Chamados
+            </a>
+            <!-- Item de lista de navegação para a rota '/' (Github) -->
+            <a mat-list-item href="https://github.com/RobsonCoura/API-Help-Desk-CRUD" target="_blank">
+                <i class="material-icons">code</i>
+                Github
+            </a>
+            <!-- Item de lista de navegação para a rota '/' (Logout) -->
+            <a mat-list-item (click)="logout()">
+                <i class="material-icons">logout</i>
+                Logout
+            </a>
+        </mat-nav-list>
+    </mat-drawer>
+
+    <!-- Conteúdo principal fora do drawer -->
+    <div class="sidenav-content">
+        <!-- Componente de cabeçalho da aplicação -->
+        <app-header></app-header>
+
+        <!-- Botão de menu para abrir/fechar o drawer -->
+        <button class="menu mat-elevation-z8" (click)="drawer.toggle()" mat-icon-button>
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <!-- Componente que renderiza o conteúdo das rotas -->
+        <router-outlet></router-outlet>
+    </div>
+
+</mat-drawer-container>

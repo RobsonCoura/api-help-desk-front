@@ -1,0 +1,38 @@
+.container {
+   width: 35rem; /* largura do container */
+   margin: auto; /* centraliza horizontalmente */
+   padding: 1rem; /* espaço interno */
+   border-radius: 0.6rem; /* arredondamento das bordas */
+}
+
+.fullWidth {
+   width: 100%; /* largura total */
+}
+
+h1, p {
+   text-align: center; /* centraliza texto */
+}
+
+img {
+   height: 12rem; /* altura da imagem */
+   margin: auto; /* centraliza horizontalmente */
+}
+
+.section {
+   margin-bottom: 1rem; /* margem inferior */
+   display: flex; /* exibe como flexbox */
+   justify-content: space-between; /* alinha itens com espaço entre eles */
+}
+
+button {
+   margin-top: 0.5rem; /* margem superior */
+}
+
+p {
+   margin-top: 4rem; /* margem superior */
+   opacity: 0.5; /* opacidade do texto */
+}
+
+mat-icon {
+   opacity: 0.8; /* opacidade do ícone */
+}

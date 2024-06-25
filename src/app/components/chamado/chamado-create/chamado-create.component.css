@@ -1,0 +1,50 @@
+/* Classe container define a largura, margens, padding e borda arredondada */
+.container {
+    width: 45%; /* Define a largura do container como 45% da largura do elemento pai */
+    margin: auto auto 3rem auto; /* Define a margem superior e laterais como auto e a margem inferior como 3rem */
+    padding: 1rem; /* Define um padding interno de 1rem */
+    border-radius: 1rem; /* Define cantos arredondados com raio de 1rem */
+}
+
+/* Classe full-width define largura total */
+.full-width {
+    width: 100%; /* Define a largura como 100% do elemento pai */
+}
+
+/* Centraliza o texto para h1, img e p */
+h1, img, p {
+    text-align: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+/* Define altura fixa para imagens */
+img {
+    height: 15rem; /* Define a altura das imagens como 15rem */
+}
+
+/* Classe status-prioridade define layout flexível */
+.status-prioridade {
+    display: flex; /* Define o layout como flexbox */
+    justify-content: space-between; /* Espaça os elementos filhos igualmente */
+}
+
+/* mat-form-field dentro de .status-prioridade define largura */
+.status-prioridade mat-form-field {
+    width: 49%; /* Define a largura dos campos de formulário como 49% do elemento pai */
+}
+
+/* Define altura mínima e máxima para a classe descricao */
+.observacoes {
+    min-height: 6rem; /* Define a altura mínima como 6rem */
+    max-height: 10rem; /* Define a altura máxima como 10rem */
+}
+
+/* Define margem superior para botões */
+button {
+    margin-top: .5rem; /* Define a margem superior dos botões como 0.5rem */
+}
+
+/* Define margem superior e opacidade para parágrafos */
+p {
+    margin-top: 3rem; /* Define a margem superior dos parágrafos como 3rem */
+    opacity: .5; /* Define a opacidade dos parágrafos como 50% */
+}

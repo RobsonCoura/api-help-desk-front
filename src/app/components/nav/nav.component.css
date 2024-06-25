@@ -1,0 +1,35 @@
+/* Estilos para o contêiner principal */
+.container {
+    height: 100%; /* Define a altura completa */
+}
+
+/* Estilos para o menu lateral (sidenav) */
+.sidenav {
+    width: 13rem; /* Largura do menu lateral */
+    color: white; /* Cor do texto */
+    background: linear-gradient(95deg, rgba(78,202,212,1) 0%, rgba(40,233,176,1) 0%, rgba(64,0,255,1) 100%); /* Fundo gradiente */
+}
+
+/* Estilos para imagens */
+img {
+    width: 100%; /* Largura total */
+    height: 7rem; /* Altura fixa */
+    margin: .8rem auto 1rem auto; /* Margens */
+}
+
+/* Estilos para links no menu lateral */
+.sidenav a {
+    color: white; /* Cor do texto */
+}
+
+/* Estilos para ícones dentro do menu lateral */
+.sidenav i {
+    margin-right: .6rem; /* Margem à direita dos ícones */
+}
+
+/* Estilos para o botão de menu */
+.menu {
+    margin: 1rem 0 0 1rem; /* Margens */
+    color: white; /* Cor do texto */
+    background: linear-gradient(95deg, rgba(78,202,212,1) 0%, rgba(40,233,176,1) 0%, rgba(64,0,255,1) 100%); /* Fundo gradiente */
+}

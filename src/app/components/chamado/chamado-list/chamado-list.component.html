@@ -1,0 +1,98 @@
+<!-- Container principal -->
+<div class="container">
+
+    <!-- Cabeçalho principal da página -->
+    <h1>Listando Chamados</h1>
+
+    <!-- Botão para adicionar um novo chamado -->
+    <button routerLink="create" class="mat-elevation-z8" mat-stroked-button color="primary">
+        Novo chamado
+    </button>
+
+    <!-- Campo de formulário para filtragem -->
+    <mat-form-field appearance="standard">
+        <!-- Rótulo do campo de filtragem -->
+        <mat-label>Filter</mat-label>
+        <!-- Campo de entrada para digitar o filtro -->
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+    </mat-form-field>
+
+    <!-- Agrupamento de botões de rádio, permitindo a seleção de uma única opção -->
+    <mat-radio-group color="primary">
+        <mat-radio-button (click)="orderByStatus(0)" value="0">ABERTO</mat-radio-button>
+        <mat-radio-button (click)="orderByStatus(1)" value="1">ANDAMENTO</mat-radio-button>
+        <mat-radio-button (click)="orderByStatus(2)" value="2">ENCERRADO</mat-radio-button>
+    </mat-radio-group>
+
+    <!-- Elemento com elevação z-depth 8 -->
+    <div class="mat-elevation-z8">
+
+        <!-- Tabela mat-table com dataSource vinculado -->
+        <table mat-table [dataSource]="dataSource">
+
+            <!-- Definição das colunas da tabela -->
+
+            <!-- Coluna ID -->
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> ID </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+
+            <!-- Coluna Nome -->
+            <ng-container matColumnDef="titulo">
+                <th mat-header-cell *matHeaderCellDef> titulo </th>
+                <td mat-cell *matCellDef="let element"> {{element.titulo}} </td>
+            </ng-container>
+
+            <!-- Coluna Cliente -->
+            <ng-container matColumnDef="cliente">
+                <th mat-header-cell *matHeaderCellDef> Cliente </th>
+                <td mat-cell *matCellDef="let element"> {{element.nomeCliente}} </td>
+            </ng-container>
+
+            <!-- Coluna Técnico -->
+            <ng-container matColumnDef="tecnico">
+                <th mat-header-cell *matHeaderCellDef> Técnico </th>
+                <td mat-cell *matCellDef="let element"> {{element.nomeTecnico}} </td>
+            </ng-container>
+
+            <!-- Coluna Data de Abertura -->
+            <ng-container matColumnDef="dataAbertura">
+                <th mat-header-cell *matHeaderCellDef> Data de Abertura </th>
+                <td mat-cell *matCellDef="let element"> {{element.dataAbertura}} </td>
+            </ng-container>
+
+            <!-- Coluna Data de Prioridade -->
+            <ng-container matColumnDef="prioridade">
+                <th mat-header-cell *matHeaderCellDef> Prioridade </th>
+                <td mat-cell *matCellDef="let element"> {{retornaPrioridade(element.prioridade)}} </td>
+            </ng-container>
+
+            <!-- Coluna Data de Status -->
+            <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef> Status </th>
+                <td mat-cell *matCellDef="let element"> {{retornaStatus(element.status)}} </td>
+            </ng-container>
+
+            <!-- Coluna Ações -->
+            <ng-container matColumnDef="acoes">
+                <th mat-header-cell *matHeaderCellDef> Ações </th>
+                <td mat-cell *matCellDef="let element">
+                    <a routerLink="update/{{ element.id }}">
+                        <i class="material-icons edit">edit</i>
+                    </a>
+                    <a routerLink="read/{{ element.id }}">
+                        <i class="material-icons visibility">visibility</i>
+                    </a>
+                </td>
+            </ng-container>
+
+            <!-- Definição das linhas da tabela -->
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <!-- Paginador mat-paginator com opções de tamanho de página e botões de primeiro e último -->
+        <mat-paginator [pageSizeOptions]="[5, 2, 10, 20, 50, 100]" showFirstLastButtons></mat-paginator>
+    </div>
+</div>

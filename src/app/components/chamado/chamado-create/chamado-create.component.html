@@ -1,0 +1,106 @@
+<div class="container mat-elevation-z8">
+    <!-- Título principal do formulário -->
+    <h1 class="full-width">Criando chamado</h1>
+
+    <!-- Imagem ilustrativa do chamado -->
+    <img class="full-width" src="assets/img/chamado-create.svg" alt="Chamado image">
+
+    <!-- Início do formulário -->
+    <form class="form">
+        <!-- Campo de texto para o título do chamado -->
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Título do chamado</mat-label>
+            <input 
+            [(ngModel)]="chamado.titulo"
+            name="titulo"
+            [formControl]="titulo"
+            required
+            matInput 
+            placeholder="Ex. Trocar bateria de notebook">
+        </mat-form-field>
+    </form>
+
+    <!-- Div para status e prioridade com layout flexível -->
+    <div class="status-prioridade">
+        <!-- Campo de seleção para o status do chamado -->
+        <mat-form-field appearance="outline">
+            <mat-label>Selecione um status</mat-label>
+            <mat-select 
+            [(ngModel)]="chamado.status"
+            name="status"
+            [formControl]="status" 
+            required>
+                <mat-option value="0">ABERTO</mat-option>
+                <mat-option value="1">EM ANDAMENTO</mat-option>
+                <mat-option value="2">ENCERRADO</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!-- Campo de seleção para a prioridade do chamado -->
+        <mat-form-field appearance="outline">
+            <mat-label>Selecione uma prioridade</mat-label>
+            <mat-select 
+            [(ngModel)]="chamado.prioridade"
+            name="prioridade"
+            [formControl]="prioridade" 
+            required>
+                <mat-option value="0">BAIXA</mat-option>
+                <mat-option value="1">MÉDIA</mat-option>
+                <mat-option value="2">ALTA</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <!-- Campo de seleção para o técnico responsável -->
+    <div class="tecnico">
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Selecione um técnico</mat-label>
+            <mat-select 
+            [(ngModel)]="chamado.tecnico"
+            name="tecnico"
+            [formControl]="tecnico" 
+            required>
+                <mat-option *ngFor="let tec of tecnicos" value="{{ tec.id }}">{{ tec.nome }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <!-- Campo de seleção para o cliente -->
+    <div class="cliente">
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Selecione um cliente</mat-label>
+            <mat-select 
+            [(ngModel)]="chamado.cliente"
+            name="cliente"
+            [formControl]="cliente" 
+            required>
+                <mat-option *ngFor="let cli of clientes" value="{{ cli.id }}">{{ cli.nome }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <!-- Segundo formulário para a descrição do chamado -->
+    <form class="form">
+        <!-- Campo de texto para a observação do chamado -->
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Deixe uma observação</mat-label>
+            <textarea
+            [(ngModel)]="chamado.observacoes"
+            name="observacoes"
+            [formControl]="observacoes"
+            required
+            class="observacoes" 
+            matInput 
+            placeholder="Ex. trocar bateria de notebook queimada..."></textarea>
+        </mat-form-field>
+    </form>
+
+    <!-- Botão para adicionar o chamado -->
+    <button (click)="create()" [disabled]="!validaCampos()" class="full-width mat-elevation-z4" mat-raised-button color="primary">Adicionar</button>
+
+    <!-- Botão para cancelar a criação do chamado -->
+    <button routerLink="../" class="full-width mat-elevation-z4" mat-raised-button color="warn">Cancelar</button>
+
+    <!-- Parágrafo informativo -->
+    <p class="full-width">Desenvolvido por Robson Coura</p>
+</div>
